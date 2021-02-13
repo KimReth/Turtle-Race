@@ -1,5 +1,5 @@
 from turtle import *
-from random import randint
+from random import randint, choice
 
 title('My Turtle Race')
 bgcolor('black')
@@ -22,57 +22,50 @@ for step in range(16):
     left(90)
     forward(20)
 
-ada = Turtle()
+ada = Turtle('turtle')
 ada.color('red')
-ada.shape('turtle')
 ada.penup()
 ada.goto(-160, 105)
 ada.pendown()
 ada.right(360)
 
-bob = Turtle()
+bob = Turtle('turtle')
 bob.color('blue')
-bob.shape('turtle')
 bob.penup()
 bob.goto(-160, 75)
 bob.pendown()
 bob.left(360)
 
-tim = Turtle()
+tim = Turtle('turtle')
 tim.color('orange')
-tim.shape('turtle')
 tim.penup()
 tim.goto(-160, 45)
 tim.pendown()
 tim.right(360)
 
-sam = Turtle()
+sam = Turtle('turtle')
 sam.color('yellow')
-sam.shape('turtle')
 sam.penup()
 sam.goto(-160, 15)
 sam.pendown()
 sam.left(360)
 
-tom = Turtle()
+tom = Turtle('turtle')
 tom.color('purple')
-tom.shape('turtle')
 tom.penup()
 tom.goto(-160, -15)
 tom.pendown()
 tom.right(360)
 
-ben = Turtle()
+ben = Turtle('turtle')
 ben.color('turquoise')
-ben.shape('turtle')
 ben.penup()
 ben.goto(-160, -45)
 ben.pendown()
 ben.left(360)
 
-joe = Turtle()
+joe = Turtle('turtle')
 joe.color('magenta')
-joe.shape('turtle')
 joe.penup()
 joe.goto(-160, -75)
 joe.pendown()
@@ -87,3 +80,10 @@ for turn in range(100):
     tom.forward(randint(1,5))
     ben.forward(randint(1,5))
     joe.forward(randint(1,5))
+
+turtle = choice([ada, bob, tim, sam, tom, ben, joe])
+if turtle.xcor() > 140:
+    turtle.color('gold')
+    turtle.shapesize(2,2,2)
+    turtle.right(360)
+    turtle.left(360)
